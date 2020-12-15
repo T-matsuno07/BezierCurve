@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="./veje.css" />
+  <script src="./jquery-3.4.1.min.js"></script>
+  <script src="./jquery-ui.min.js"></script>
+  <script src="./veje.js"></script>
+  <title>ベジェ曲線</title>
+</head>
+
+<body>
+
+  <div id="Area_level1_root" data-float="clear">
+    <h1>1次ベジェ曲線(制御点0個の直線)</h1>
+    <div data-float="left">
+      <table id="Table_level1">
+        <thead>
+          <tr>
+            <th>座標名</th>
+            <th>X座標</th>
+            <th>Y座標</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr data-table-row="start">
+            <td>始点(青)</td>
+            <td data-table-col="X"></td>
+            <td data-table-col="Y"></td>
+          </tr>
+          <tr data-table-row="end">
+            <td>終点(赤)</td>
+            <td data-table-col="X"></td>
+            <td data-table-col="Y"></td>
+          </tr>
+        </tbody>
+
+      </table>
+
+    </div>
+    <div data-float="left">
+      <div class="t_para_erea">
+        <svg width="500px" height="50px">
+          <text x="65" y="32" font-size="20" text-anchor="end" stroke="#000" fill="#000">t = 0.0</text>
+          <text x="430" y="32" font-size="20" text-anchor="start" stroke="#000" fill="#000">1.0</text>
+          <path id="sg_t_path1" d="M75,25 h350" stroke="#000" stroke-width="4" />
+          <circle id="move_circle" cx="75" cy="25" r="10" fill="purple">
+          </circle>
+
+        </svg>
+      </div>
+      <div class="draw_area_root" data-float="clear">
+
+        <div data-panel="vege_line" data-float="left">
+          <svg width="500px" height="500px">
+            <path id="vege_line1" d="M75,25 L200,300" stroke="violet" stroke-width="4" />
+            <circle id="vege_point1" cx="75" cy="25" r="10" fill="purple">
+            </circle>
+          </svg>
+        </div>
+        <div data-panel="drag_control" data-float="left" style="z-index: 10;">
+          <div class="drag_panel" data-ctlpoint-A="start" style="background-color: blue;"></div>
+          <div class="drag_panel" data-ctlpoint-A="end" style="background-color: red;"></div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+  <div id="Area_level2_root" data-float="clear">
+    <h1>2次ベジェ曲線(制御点1個の曲線)</h1>
+    <div data-float="left">
+      <table id="Table_level2">
+        <thead>
+          <tr>
+            <th>座標名</th>
+            <th>X座標</th>
+            <th>Y座標</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr data-table-row="start">
+            <td>始点(青)</td>
+            <td data-table-col="X"></td>
+            <td data-table-col="Y"></td>
+          </tr>
+          <tr data-table-row="first">
+            <td>制御点(緑)</td>
+            <td data-table-col="X"></td>
+            <td data-table-col="Y"></td>
+          </tr>
+          <tr data-table-row="end">
+            <td>終点(赤)</td>
+            <td data-table-col="X"></td>
+            <td data-table-col="Y"></td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+    <div data-float="left">
+      <div class="t_para_erea">
+        <svg width="500px" height="50px">
+          <text x="65" y="32" font-size="20" text-anchor="end" stroke="#000" fill="#000">t = 0.0</text>
+          <text x="430" y="32" font-size="20" text-anchor="start" stroke="#000" fill="#000">1.0</text>
+          <path id="sg_t_path2" d="M75,25 h350" stroke="#000" stroke-width="4" />
+          <circle id="move_circle2" cx="75" cy="25" r="10" fill="purple">
+          </circle>
+        </svg>
+      </div>
+      <div class="draw_area_root" data-float="clear">
+        <div data-panel="first" data-float="left">
+          <svg width="500px" height="500px">
+            <path id="ctrl_first_lineA" d="M75,25 L200,300" stroke="darkseagreen" stroke-width="4" />
+            <path id="ctrl_first_lineB" d="M75,25 L200,300" stroke="darkseagreen" stroke-width="4" />
+            <path id="ctrl_first_lineC" d="M75,25 L200,300" stroke="yellow" stroke-width="4" />
+            <circle id="ctrl_first_pointA" cx="75" cy="25" r="5" fill="seagreen"></circle>
+            <circle id="ctrl_first_pointB" cx="75" cy="25" r="5" fill="seagreen"></circle>
+          </svg>
+        </div>
+
+        <div data-panel="vege_line" data-float="left">
+          <svg width="500px" height="500px">
+            <path id="vege_line2" d="M75,25 L200,300" stroke="violet" stroke-width="4" fill="none" />
+            <circle id="vege_point2" cx="75" cy="25" r="10" fill="purple">
+            </circle>
+          </svg>
+        </div>
+        <div data-panel="drag_control2" data-float="left" style="z-index: 10;">
+          <div class="drag_panel" data-ctlpoint-B="start" style="background-color: blue;"></div>
+          <div class="drag_panel" data-ctlpoint-B="first" style="background-color: green;"></div>
+          <div class="drag_panel" data-ctlpoint-B="end" style="background-color: red;"></div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+  <div id="Area_level3_root" data-float="clear">
+    <h1>3次ベジェ曲線(制御点2個の曲線)</h1>
+    <div data-float="left">
+      <table id="Table_level2">
+        <thead>
+          <tr>
+            <th>座標名</th>
+            <th>X座標</th>
+            <th>Y座標</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr data-table-row="start">
+            <td>始点(青)</td>
+            <td data-table-col="X"></td>
+            <td data-table-col="Y"></td>
+          </tr>
+          <tr data-table-row="first">
+            <td>制御点1(緑)</td>
+            <td data-table-col="X"></td>
+            <td data-table-col="Y"></td>
+          </tr>
+          <tr data-table-row="second">
+            <td>制御点2(橙)</td>
+            <td data-table-col="X"></td>
+            <td data-table-col="Y"></td>
+          </tr>
+          <tr data-table-row="end">
+            <td>終点(赤)</td>
+            <td data-table-col="X"></td>
+            <td data-table-col="Y"></td>
+          </tr>
+        </tbody>
+      </table>
+
+
+    </div>
+    <div data-float="left">
+
+    </div>
+
+  </div>
+</body>
+
+</html>

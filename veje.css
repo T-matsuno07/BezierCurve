@@ -1,0 +1,44 @@
+.float_left,
+[data-float="left"]{
+  float: left;
+  position: relative;
+}
+
+
+.float_right,
+[data-float="right"]{
+  float: right;
+  position: relative;
+}
+
+.float_clear::after,
+[data-float="clear"]::after{
+  /* floatによる回り込みを解除する */
+  display : block;
+  content : "";
+  clear : both;
+  position: relative;
+}
+
+.t_para_erea {
+  width: 500px;
+}
+
+.draw_area_root {
+  
+  background-color: #DDD;
+  height: 500px;
+}
+
+[data-panel]{
+  position: absolute;
+  width: 500px;
+  height: 500px;
+}
+
+.drag_panel {
+  position: absolute;
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+}
