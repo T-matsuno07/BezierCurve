@@ -444,7 +444,7 @@ $(function () {
 
   $("[data-ctlpoint-C]").draggable({
     // ドラッグ可能な移動範囲を制限
-    containment: '[data-panel="drag_control3"]',
+    containment: '[data-panelZ="drag_control3"]',
 
     // ドラッグ開始時に実行する処理
     start: function (event, ui) {
