@@ -30,7 +30,10 @@
   height: 500px;
 }
 
-[data-panel]{
+[data-panel],
+[data-panelX],
+[data-panelY],
+[data-panelZ]{
   position: absolute;
   width: 500px;
   height: 500px;

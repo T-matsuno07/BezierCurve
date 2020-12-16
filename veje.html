@@ -36,7 +36,27 @@
             <td data-table-col="Y"></td>
           </tr>
         </tbody>
+      </table>
+      <table>
+        <tbody>
+          <tr>
+            <td>
+              <label><input type="checkbox" data-onoffX="lvl1_line" />1次直線</label>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label><input type="checkbox" data-onoffX="lvl1_point" />1次中点</label>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <input type="button" data-allswtchX="0" value="全OFF" />
+              <input type="button" data-allswtchX="1" value="全ON" />
+            </td>
+          </tr>
 
+        </tbody>
       </table>
 
     </div>
@@ -52,10 +72,13 @@
         </svg>
       </div>
       <div class="draw_area_root" data-float="clear">
-
-        <div data-panel="vege_line" data-float="left">
+        <div data-panelX="lvl1_line" data-float="left">
           <svg width="500px" height="500px">
             <path id="vege_line1" d="M75,25 L200,300" stroke="violet" stroke-width="4" />
+          </svg>
+        </div>
+        <div data-panelX="lvl1_point" data-float="left">
+          <svg width="500px" height="500px">
             <circle id="vege_point1" cx="75" cy="25" r="10" fill="purple">
             </circle>
           </svg>
@@ -98,6 +121,43 @@
           </tr>
         </tbody>
       </table>
+      <table>
+        <tbody>
+          <tr>
+            <td>
+              <label><input type="checkbox" data-onoffY="lvl1_line" />1次直線</label>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label><input type="checkbox" data-onoffY="lvl1_point" />1次中点</label>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label><input type="checkbox" data-onoffY="lvl2_line" />2次直線</label>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label><input type="checkbox" data-onoffY="lvl2_point" />2次中点</label>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label><input type="checkbox" data-onoffY="lvl3_line" />2次ベジェ曲線</label>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <input type="button" data-allswtchY="0" value="全OFF" />
+              <input type="button" data-allswtchY="1" value="全ON" />
+            </td>
+          </tr>
+
+        </tbody>
+      </table>
+
 
     </div>
     <div data-float="left">
@@ -111,23 +171,36 @@
         </svg>
       </div>
       <div class="draw_area_root" data-float="clear">
-        <div data-panel="first" data-float="left">
+        <div data-panelY="lvl1_line" data-float="left">
           <svg width="500px" height="500px">
             <path id="ctrl_first_lineA" d="M75,25 L200,300" stroke="darkseagreen" stroke-width="4" />
             <path id="ctrl_first_lineB" d="M75,25 L200,300" stroke="darkseagreen" stroke-width="4" />
-            <path id="ctrl_first_lineC" d="M75,25 L200,300" stroke="yellow" stroke-width="4" />
+          </svg>
+        </div>
+
+        <div data-panelY="lvl1_point" data-float="left">
+          <svg width="500px" height="500px">
             <circle id="ctrl_first_pointA" cx="75" cy="25" r="5" fill="seagreen"></circle>
             <circle id="ctrl_first_pointB" cx="75" cy="25" r="5" fill="seagreen"></circle>
           </svg>
         </div>
 
-        <div data-panel="vege_line" data-float="left">
+        <div data-panelY="lvl2_line" data-float="left">
           <svg width="500px" height="500px">
-            <path id="vege_line2" d="M75,25 L200,300" stroke="violet" stroke-width="4" fill="none" />
-            <circle id="vege_point2" cx="75" cy="25" r="10" fill="purple">
-            </circle>
+            <path id="ctrl_first_lineC" d="M75,25 L200,300" stroke="darkgoldenrod" stroke-width="4" />
           </svg>
         </div>
+        <div data-panelY="lvl3_line" data-float="left">
+          <svg width="500px" height="500px">
+            <path id="vege_line2" d="M75,25 L200,300" stroke="violet" stroke-width="4" fill="none" />
+          </svg>
+        </div>
+        <div data-panelY="lvl2_point" data-float="left">
+          <svg width="500px" height="500px">
+            <circle id="vege_point2" cx="75" cy="25" r="10" fill="purple"></circle>
+          </svg>
+        </div>
+
         <div data-panel="drag_control2" data-float="left" style="z-index: 10;">
           <div class="drag_panel" data-ctlpoint-B="start" style="background-color: blue;"></div>
           <div class="drag_panel" data-ctlpoint-B="first" style="background-color: green;"></div>
@@ -141,7 +214,7 @@
   <div id="Area_level3_root" data-float="clear">
     <h1>3次ベジェ曲線(制御点2個の曲線)</h1>
     <div data-float="left">
-      <table id="Table_level2">
+      <table id="Table_level3">
         <thead>
           <tr>
             <th>座標名</th>
@@ -172,10 +245,119 @@
           </tr>
         </tbody>
       </table>
+      <table>
+        <tbody>
+          <tr>
+            <td>
+              <label><input type="checkbox" data-onoffZ="lvl1_line" />1次直線</label>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label><input type="checkbox" data-onoffZ="lvl1_point" />1次中点</label>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label><input type="checkbox" data-onoffZ="lvl2_line" />2次直線</label>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label><input type="checkbox" data-onoffZ="lvl2_point" />2次中点</label>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label><input type="checkbox" data-onoffZ="lvl3_line" />3次直線</label>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label><input type="checkbox" data-onoffZ="lvl3_point" />3次中点</label>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label><input type="checkbox" data-onoffZ="lvl4_line" />3次ベジェ曲線</label>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <input type="button" data-allswtchZ="0" value="全OFF" />
+              <input type="button" data-allswtchZ="1" value="全ON" />
+            </td>
+          </tr>
+        </tbody>
+      </table>
 
 
     </div>
     <div data-float="left">
+      <div class="t_para_erea">
+        <svg width="500px" height="50px">
+          <text x="65" y="32" font-size="20" text-anchor="end" stroke="#000" fill="#000">t = 0.0</text>
+          <text x="430" y="32" font-size="20" text-anchor="start" stroke="#000" fill="#000">1.0</text>
+          <path id="sg_t_path3" d="M75,25 h350" stroke="#000" stroke-width="4" />
+          <circle id="move_circle3" cx="75" cy="25" r="10" fill="purple">
+          </circle>
+        </svg>
+      </div>
+      <div class="draw_area_root" data-float="clear">
+        <div data-panelZ="lvl1_line" data-float="left">
+          <svg width="500px" height="500px">
+            <path id="ctrl_second_line1A" d="M75,25 L200,300" stroke="darkseagreen" stroke-width="4" />
+            <path id="ctrl_second_line1B" d="M75,25 L200,300" stroke="darkseagreen" stroke-width="4" />
+            <path id="ctrl_second_line1C" d="M75,25 L200,300" stroke="darkseagreen" stroke-width="4" />
+          </svg>
+        </div>
+        <div data-panelZ="lvl1_point" data-float="left">
+          <svg width="500px" height="500px">
+            <circle id="ctrl_second_point1A" cx="75" cy="25" r="5" fill="seagreen"></circle>
+            <circle id="ctrl_second_point1B" cx="75" cy="25" r="5" fill="seagreen"></circle>
+            <circle id="ctrl_second_point1C" cx="75" cy="25" r="5" fill="seagreen"></circle>
+
+
+          </svg>
+        </div>
+        <div data-panelZ="lvl2_line" data-float="left">
+          <svg width="500px" height="500px">
+            <path id="ctrl_second_line2A" d="M75,25 L200,300" stroke="darkgoldenrod" stroke-width="4" />
+            <path id="ctrl_second_line2B" d="M75,25 L200,300" stroke="darkgoldenrod" stroke-width="4" />
+          </svg>
+        </div>
+        <div data-panelZ="lvl2_point" data-float="left">
+          <svg width="500px" height="500px">
+            <circle id="ctrl_second_point2A" cx="75" cy="25" r="5" fill="yellow"></circle>
+            <circle id="ctrl_second_point2B" cx="75" cy="25" r="5" fill="yellow"></circle>
+          </svg>
+        </div>
+        <div data-panelZ="lvl3_line" data-float="left">
+          <svg width="500px" height="500px">
+            <path id="ctrl_second_line3A" d="M75,25 L200,300" stroke="cyan" stroke-width="4" />
+          </svg>
+        </div>
+
+        <div data-panelZ="lvl4_line" data-float="left" style="z-index: 8;">
+          <svg width="500px" height="500px">
+            <path id="vege_line3" d="M75,25 L200,300" stroke="violet" stroke-width="4" fill="none" />
+          </svg>
+        </div>
+        <div data-panelZ="lvl3_point" data-float="left" style="z-index: 9;">
+          <svg width="500px" height="500px">
+            <circle id="vege_point3" cx="75" cy="25" r="10" fill="purple"></circle>
+          </svg>
+        </div>
+        <div data-panelZ="drag_control3" data-float="left" style="z-index: 10;">
+          <div class="drag_panel" data-ctlpoint-C="start" style="background-color: blue;"></div>
+          <div class="drag_panel" data-ctlpoint-C="first" style="background-color: green;"></div>
+          <div class="drag_panel" data-ctlpoint-C="second" style="background-color: orange;"></div>
+          <div class="drag_panel" data-ctlpoint-C="end" style="background-color: red;"></div>
+        </div>
+
+      </div>
+
+
 
     </div>
 
